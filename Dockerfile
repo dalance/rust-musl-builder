@@ -47,7 +47,7 @@ ADD sudoers /etc/sudoers.d/nopasswd
 
 # Run all further code as user `rust`, and create our working directories
 # as the appropriate user.
-#USER rust
+USER rust
 RUN mkdir -p /home/rust/libs /home/rust/src
 
 # Set up our path with all our binary directories, including those for the
@@ -124,3 +124,5 @@ RUN cargo install -f cargo-audit && \
 # Expect our source code to live in /home/rust/src.  We'll run the build as
 # user `rust`, which will be uid 1000, gid 1000 outside the container.
 WORKDIR /home/rust/src
+
+RUN sudo su root
