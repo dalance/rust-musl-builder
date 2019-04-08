@@ -47,7 +47,7 @@ ADD sudoers /etc/sudoers.d/nopasswd
 
 # Run all further code as user `rust`, and create our working directories
 # as the appropriate user.
-USER rust
+#USER rust
 RUN mkdir -p /home/rust/libs /home/rust/src
 
 # Set up our path with all our binary directories, including those for the
