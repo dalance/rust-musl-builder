@@ -125,4 +125,4 @@ RUN cargo install -f cargo-audit && \
 # user `rust`, which will be uid 1000, gid 1000 outside the container.
 WORKDIR /home/rust/src
 
-RUN sudo su root
+USER root
